@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "description": "Starter React project that uses webpack, react-router, and redux.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=development webpack-dev-server",
+    "build": "webpack -p",
+    "test": "jest --config jest-config.json",
+    "lint": "eslint src tests --ext .js,.jsx"
   },
   "repository": {
     "type": "git",

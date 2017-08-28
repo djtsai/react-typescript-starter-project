@@ -1,0 +1,20 @@
+{
+  "verbose": true,
+  "moduleNameMapper": {
+    "^actions(.*)$": "<rootDir>/src/actions$1",
+    "^components(.*)$": "<rootDir>/src/components$1",
+    "^constants(.*)$": "<rootDir>/src/constants$1",
+    "^containers(.*)$": "<rootDir>/src/containers$1",
+    "^reducers(.*)$": "<rootDir>/src/reducers$1",
+    "^server(.*)$": "<rootDir>/src/server$1"
+  },
+  "collectCoverage": true,
+  "coverageThreshold": {
+    "global": {
+      "branches": 100,
+      "functions": 100,
+      "lines": 100,
+      "statements": 100
+    }
+  }
+}
