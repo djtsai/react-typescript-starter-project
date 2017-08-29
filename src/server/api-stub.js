@@ -16,7 +16,7 @@ module.exports = [{
             return example
         }
 
-        return null
+        throw getError(405, 'Invalid API call!')
     },
 
     get(match, data) {

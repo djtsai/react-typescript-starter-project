@@ -2,6 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { ToastContainer, toast } from 'react-toastify'
+import * as ReactStarterActions from 'actions/reactStarterActions'
+
+import 'react-toastify/dist/ReactToastify.min.css'
 
 function mapStateToProps(state) {
     return {
@@ -11,11 +15,15 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({}, dispatch)
+    return bindActionCreators(ReactStarterActions, dispatch)
 }
 
 class ReactStarterApp extends React.Component {
     componentWillReceiveProps(nextProps) {
+        if (nextProps.toast.show) {
+            toast(nextProps.toast.message, { type: nextProps.toast.toastType })
+        }
+
         if (nextProps.redirect !== this.props.redirect && nextProps.redirect !== '') {
             this.props.history.push(nextProps.redirect)
         }
@@ -24,8 +32,9 @@ class ReactStarterApp extends React.Component {
     render() {
         return (
             <div className="react-starter-app-container">
+                <ToastContainer/>
                 <h1>React Starter App</h1>
-                <button>Click to make sample API call!</button>
+                <button onClick={this.props.getExample}>Click to make sample API call!</button>
             </div>
         )
     }
@@ -33,6 +42,13 @@ class ReactStarterApp extends React.Component {
 
 ReactStarterApp.propTypes = {
     redirect: PropTypes.string.isRequired,
+    toast: PropTypes.shape({
+        show: PropTypes.bool.isRequired,
+        message: PropTypes.string.isRequired,
+        toastType: PropTypes.string.isRequired
+    }).isRequired,
+    getExample: PropTypes.func.isRequired,
+    displayToast: PropTypes.func.isRequired,
     history: PropTypes.object.isRequired
 }
 

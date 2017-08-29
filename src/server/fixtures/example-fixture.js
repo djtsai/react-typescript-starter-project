@@ -1,3 +1,3 @@
 export const example = {
-    message: "Hello World"
+    message: "Successfully called API!"
 }
