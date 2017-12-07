@@ -1,8 +1,8 @@
 {
   "sourceMaps": "both",
   "presets": [
-    "env",
-    "react",
-    "stage-2"
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-stage-2"
   ]
 }
