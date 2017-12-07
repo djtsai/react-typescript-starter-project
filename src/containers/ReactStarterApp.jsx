@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify'
 import * as ReactStarterActions from 'actions/reactStarterActions'
 
+import './ReactStarterApp.scss'
+
 function mapStateToProps(state) {
     return {
         redirect: state.redirect,
@@ -29,11 +31,13 @@ class ReactStarterApp extends React.Component {
 
     render() {
         return (
-            <div className="react-starter-app-container">
+            <>
                 <ToastContainer/>
-                <h1>React Starter App</h1>
-                <button onClick={this.props.getExample}>Click to make sample API call!</button>
-            </div>
+                <div className="react-starter-app-container">
+                    <h1>React Starter App</h1>
+                    <button onClick={this.props.getExample}>Click to make sample API call!</button>
+                </div>
+            </>
         )
     }
 }
