@@ -5,8 +5,6 @@ import { connect } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify'
 import * as ReactStarterActions from 'actions/reactStarterActions'
 
-import 'react-toastify/dist/ReactToastify.min.css'
-
 function mapStateToProps(state) {
     return {
         redirect: state.redirect,
