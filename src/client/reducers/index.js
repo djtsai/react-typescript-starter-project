@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux'
+
 import redirect from './redirect'
-import toast from './toast'
+import requestStatus from './requestStatus'
 
 const rootReducer = combineReducers({
-    redirect,
-    toast
+  redirect,
+  requestStatus
 })
 
 export default rootReducer

@@ -2,7 +2,7 @@ import merge from 'webpack-merge' // Merges webpack configurations
 import baseWebpackConfig from './webpack.config.base.babel.js'
 
 const PORT = process.env.PORT_PUBLIC || 3000
-const API_BASE = process.env.API_BASE || 'http://localhost:8080'
+const API_BASE = process.env.API_BASE || 'http://localhost:8080' // This is the url for server API
 
 module.exports = (env) => {
   return merge(
@@ -21,10 +21,6 @@ module.exports = (env) => {
         },
         proxy: {
           '/api': {
-            target: API_BASE,
-            changeOrigin: true
-          },
-          '/core': {
             target: API_BASE,
             changeOrigin: true
           }
