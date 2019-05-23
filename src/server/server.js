@@ -49,6 +49,8 @@ app.get('/port/:host/:port', (req, res) => {
   })
 })
 
+app.get('/test-endpoint', (req, res) => res.send({ message: 'Successfully called API!' }))
+
 // All of our files are static. Webpack takes care of pre-gziping them.
 // This deals with serving them.
 app.use(staticFileMiddleware)
