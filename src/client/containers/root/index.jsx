@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { connect } from 'react-redux'
+import { ToastContainer } from 'react-toastify'
 
 import './index.scss'
 
@@ -20,6 +21,7 @@ class RootContainer extends React.Component {
   render() {
     return (
       <div className="react-starter-app-container">
+        <ToastContainer/>
         <h1>React Starter App</h1>
         <button>Click to make sample API call!</button>
       </div>
