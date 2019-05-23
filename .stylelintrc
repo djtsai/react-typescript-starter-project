@@ -1,0 +1,19 @@
+{
+  "defaultSeverity": "warning",
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": [
+        "each",
+        "extend",
+        "include",
+        "mixin",
+        "if",
+        "else"
+      ]
+    }],
+    "unit-no-unknown": [true, {
+      "ignoreUnits": ["x"]
+    }]
+  }
+}

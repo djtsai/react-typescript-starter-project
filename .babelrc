@@ -1,8 +1,9 @@
 {
-  "sourceMaps": "both",
   "presets": [
     "@babel/preset-env",
-    "@babel/preset-react",
-    "@babel/preset-stage-2"
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-object-rest-spread"
   ]
 }

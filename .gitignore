@@ -64,4 +64,4 @@ typings/
 .idea
 
 # Build directory
-public/dist
+build/
