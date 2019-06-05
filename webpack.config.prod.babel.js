@@ -1,7 +1,7 @@
 import merge from 'webpack-merge' // Merges webpack configurations
 import path from 'path'
 import baseWebpackConfig from './webpack.config.base.babel.js'
-import CleanWebpackPlugin from 'clean-webpack-plugin' // Cleans build directory before building assets
+import { CleanWebpackPlugin } from 'clean-webpack-plugin' // Cleans build directory before building assets
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin' // Used to minimize css files
 
 const resolveRootPath = (p) => path.resolve(__dirname, p)
