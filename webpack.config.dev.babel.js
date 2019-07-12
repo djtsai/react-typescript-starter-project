@@ -1,4 +1,5 @@
 import merge from 'webpack-merge' // Merges webpack configurations
+
 import baseWebpackConfig from './webpack.config.base.babel.js'
 
 const PORT = process.env.PORT_PUBLIC || 3000

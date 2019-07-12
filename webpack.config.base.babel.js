@@ -85,7 +85,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      API_BASE: `'${process.env.API_BASE || ''}'`,
+      API_BASE: `'${process.env.API_BASE || 'http://localhost:8080'}'`,
       BUILD_TIME: buildTime,
       'process.env': {
         devMode
@@ -95,7 +95,6 @@ module.exports = {
       title: '',
       template: resolveSrcPath('client/index.ejs')
     }),
-    new webpack.NamedModulesPlugin(),
     new StyleLintPlugin({
       configFile: '.stylelintrc',
       syntax: 'scss'
