@@ -1,9 +1,9 @@
+import csp from 'helmet-csp'
 import express from 'express'
-import morgan from 'morgan'
 import expressStaticGzip from 'express-static-gzip'
 import history from 'connect-history-api-fallback'
-import csp from 'helmet-csp'
 import isPortReachable from 'is-port-reachable'
+import morgan from 'morgan'
 
 const port = process.env.PORT_PUBLIC || 3000
 const staticFileMiddleware = expressStaticGzip('build/dist')

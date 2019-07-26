@@ -23,7 +23,7 @@ module.exports = (env) => {
       },
       plugins: [
         new CleanWebpackPlugin({
-          cleanOnceBeforeBuildPatterns: [ resolveRootPath('build') ]
+          cleanOnceBeforeBuildPatterns: [resolveRootPath('build')]
         }),
         new webpack.optimize.AggressiveMergingPlugin() // merge chunks
       ]

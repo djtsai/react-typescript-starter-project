@@ -1,8 +1,9 @@
 import { toast as mockToast } from 'react-toastify'
 
-import createMockMiddleware from './mockMiddleware'
 import * as ActionTypes from 'constants/ActionTypes'
 import toastMiddleware from 'middleware/toast'
+
+import createMockMiddleware from './mockMiddleware'
 
 describe('toast middleware', () =>{
   let mockMiddleware
