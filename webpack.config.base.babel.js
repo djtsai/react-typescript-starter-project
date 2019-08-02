@@ -27,7 +27,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build/dist'),
     publicPath: '/',
-    filename: 'assets/js/[name].[hash:7].js'
+    filename: devMode ? 'assets/js/[name].[hash:7].js' : 'assets/js/[name].[contenthash].js'
   },
   module: {
     rules: [
@@ -60,7 +60,7 @@ module.exports = {
         options: {
           context: resolveSrcPath('client'),
           limit: 10000,
-          name : 'assets/img/[name].[hash:7].[ext]'
+          name : devMode ? 'assets/img/[name].[hash:7].[ext]' : 'assets/img/[name].[contenthash].[ext]'
         }
       }
     ]
