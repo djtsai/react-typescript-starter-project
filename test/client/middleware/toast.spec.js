@@ -5,7 +5,7 @@ import toastMiddleware from 'middleware/toast'
 
 import createMockMiddleware from './mockMiddleware'
 
-describe('toast middleware', () =>{
+describe('toast middleware', () => {
   let mockMiddleware
 
   beforeEach(() => {

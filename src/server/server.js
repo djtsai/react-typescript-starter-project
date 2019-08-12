@@ -22,7 +22,7 @@ app.use((req, res, next) => {
   res.header('X-App-Version', process.env.PLATFORM_ARTIFACT_VERSION)
   if (req.url.indexOf('/assets') === 0) {
     // All assets are hashed, we can safely cache them for a long time
-    const cacheSeconds = 30*24*60*60
+    const cacheSeconds = 30 * 24 * 60 * 60
     res.setHeader('Cache-Control', 'public, max-age=' + cacheSeconds)
   }
   next()
