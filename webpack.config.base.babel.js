@@ -2,7 +2,7 @@ import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin' // Generates index.html with imported js and css
 import MiniCssExtractPlugin from 'mini-css-extract-plugin' // Used to extract css into different files
-import StyleLintPlugin from 'stylelint-ext-webpack-plugin' // Linter for scss files
+import StyleLintPlugin from 'stylelint-webpack-plugin' // Linter for scss files
 
 const buildTime = new Date().getTime()
 const devMode = process.env.NODE_ENV !== 'production'
