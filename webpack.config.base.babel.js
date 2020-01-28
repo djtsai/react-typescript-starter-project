@@ -60,7 +60,7 @@ module.exports = {
         options: {
           context: resolveSrcPath('client'),
           limit: 10000,
-          name : devMode ? 'assets/img/[name].[hash:7].[ext]' : 'assets/img/[name].[contenthash].[ext]'
+          name: devMode ? 'assets/img/[name].[hash:7].[ext]' : 'assets/img/[name].[contenthash].[ext]'
         }
       }
     ]

@@ -9,7 +9,7 @@
   },
   "settings": {
     "react": {
-      "version": "16.9"
+      "version": "16.12"
     },
     "import/resolver": {
       "webpack": {
@@ -44,8 +44,8 @@
     "no-console": "warn",
     "no-duplicate-imports": ["error", { "includeExports": true }],
     "no-invalid-this": "error",
-    "no-multi-spaces": ["error", { "exceptions": { "ImportDeclaration": true, "VariableDeclarator": true, "BinaryExpression": true } }],
-    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }],
+    "no-multi-spaces": "error",
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
     "no-restricted-globals": ["error", "event"],
     "no-trailing-spaces": "error",
     "no-unused-expressions": "error",
