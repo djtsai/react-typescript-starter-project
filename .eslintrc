@@ -9,7 +9,7 @@
   },
   "settings": {
     "react": {
-      "version": "16.12"
+      "version": "16.13"
     },
     "import/resolver": {
       "webpack": {
@@ -54,6 +54,7 @@
     "object-curly-spacing": ["error", "always"],
     "object-curly-newline": ["error", { "consistent": true, "multiline": true }],
     "object-property-newline": ["error", { "allowAllPropertiesOnSameLine": true }],
+    "object-shorthand": "error",
     "operator-linebreak": "error",
     "quotes": ["error", "single", { "avoidEscape": true }],
     "react/jsx-closing-bracket-location": "error",

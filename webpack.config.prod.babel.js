@@ -3,7 +3,7 @@ import webpack from 'webpack'
 import merge from 'webpack-merge' // Merges webpack configurations
 import { CleanWebpackPlugin } from 'clean-webpack-plugin' // Cleans build directory before building assets
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin' // Minimize css files
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin' // Minimize js files
+import TerserPlugin from 'terser-webpack-plugin' // Minimize js files
 
 import baseWebpackConfig from './webpack.config.base.babel.js'
 
@@ -17,7 +17,7 @@ module.exports = (env) => {
       devtool: 'nosources-source-map',
       optimization: {
         minimizer: [
-          new UglifyJsPlugin(),
+          new TerserPlugin(),
           new OptimizeCSSAssetsPlugin({})
         ]
       },
