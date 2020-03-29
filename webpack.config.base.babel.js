@@ -22,7 +22,7 @@ module.exports = {
     extensions: ['.js', '.json', '.jsx', '.ts', '.tsx']
   },
   entry: {
-    app: resolveSrcPath('client/App.jsx')
+    app: resolveSrcPath('client/App.tsx')
   },
   output: {
     path: path.resolve(__dirname, 'build/dist'),

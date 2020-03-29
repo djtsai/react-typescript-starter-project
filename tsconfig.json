@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "jsx": "react",
+    "paths": {
+      "actions/*": ["client/actions/*"],
+      "components/*": ["client/components/*"],
+      "constants/*": ["client/constants/*"],
+      "containers/*": ["client/containers/*"],
+      "middleware/*": ["client/middleware/*"],
+      "reducers/*": ["client/reducers/*"],
+      "store/*": ["client/store/*"]
+    },
+    "removeComments": true
+  }
+}
