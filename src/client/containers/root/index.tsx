@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { FunctionComponent, useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 import { ToastContainer } from 'react-toastify'
 
@@ -7,7 +7,7 @@ import * as Actions from 'actions/reactStarterActions'
 import 'react-toastify/dist/ReactToastify.min.css'
 import './index.scss'
 
-const RootContainer = () => {
+const RootContainer: FunctionComponent = () => {
   const dispatch = useDispatch()
 
   const getExample = useCallback(() => {

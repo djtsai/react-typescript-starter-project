@@ -1,8 +1,27 @@
 {
   "compilerOptions": {
+    // Process & infer types from .js files.
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./src",
+    // Import non-ES modules as default imports.
+    "esModuleInterop": true,
+    // use typescript to transpile jsx to js
     "jsx": "react",
+    "lib": [
+      "es2015",
+      "dom.iterable",
+      "es2016.array.include",
+      "es2017.object",
+      "dom"
+    ],
+    "module": "es6",
+    // Search under node_modules for non-relative imports.
+    "moduleResolution": "node",
+    // Don't emit; allow Babel to transform files.
+    "noEmit": true,
+    // path to output directory
+    "outDir": "./build/dist/",
     "paths": {
       "actions/*": ["client/actions/*"],
       "components/*": ["client/components/*"],
@@ -12,6 +31,11 @@
       "reducers/*": ["client/reducers/*"],
       "store/*": ["client/store/*"]
     },
-    "removeComments": true
+    "removeComments": true,
+    "sourceMap": true,
+    // Enable strictest settings like strictNullChecks & noImplicitAny.
+    "strict": true,
+    // Target latest version of ECMAScript.
+    "target": "esnext"
   }
 }

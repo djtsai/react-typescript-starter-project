@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom'
@@ -8,7 +8,7 @@ import configureStore from 'store/configureStore'
 
 const store = configureStore()
 
-const App = () => {
+const App: FunctionComponent = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
