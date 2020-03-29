@@ -19,7 +19,7 @@ module.exports = {
       reducers: resolveSrcPath('client/reducers'),
       store: resolveSrcPath('client/store')
     },
-    extensions: ['.js', '.json', '.jsx']
+    extensions: ['.js', '.json', '.jsx', '.ts', '.tsx']
   },
   entry: {
     app: resolveSrcPath('client/App.jsx')
@@ -33,7 +33,7 @@ module.exports = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.jsx?$/,
+        test: /\.[jt]sx?$/,
         exclude: /node_modules/,
         loader: 'eslint-loader', // Runs eslint before trying to compile js
         options: {
@@ -41,7 +41,7 @@ module.exports = {
         }
       },
       {
-        test: /\.jsx?$/,
+        test: /\.[jt]sx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
