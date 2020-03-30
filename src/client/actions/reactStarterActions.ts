@@ -1,4 +1,5 @@
 import { toast } from 'react-toastify'
+import { Action } from 'redux'
 
 import * as ActionTypes from 'constants/ActionTypes'
 
@@ -11,12 +12,12 @@ interface APIActionMeta {
   }
 }
 
-interface GetExampleAction {
+export interface GetExampleAction extends Action {
   type: typeof ActionTypes.GET_EXAMPLE
   meta: APIActionMeta
 }
 
-interface DisplayToastAction {
+export interface DisplayToastAction extends Action {
   type: typeof ActionTypes.DISPLAY_TOAST
   toast: {
     message: string

@@ -6,7 +6,7 @@ const initialState = RequestStatus.REQUEST_NOT_STARTED
 
 describe('request status reducer', () => {
   it('should return the initial state', () => {
-    expect(reducer(undefined, {})).toEqual(initialState)
+    expect(reducer(undefined, { type: '' })).toEqual(initialState)
   })
 
   it('should handle SET_REQUEST_NOT_STARTED', () => {

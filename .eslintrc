@@ -1,6 +1,9 @@
 {
   "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended"],
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "env": {
     "browser": true,
     "es6": true,
@@ -17,7 +20,7 @@
       }
     }
   },
-  "plugins": ["react", "react-hooks", "import"],
+  "plugins": ["react", "react-hooks", "import", "@typescript-eslint"],
   "globals": {
     "API_BASE": false,
     "BUILD_TIME": false

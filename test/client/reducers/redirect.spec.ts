@@ -3,7 +3,7 @@ import reducer from 'reducers/redirect'
 
 describe('redirect reducer', () => {
   it('should return the initial state', () => {
-    expect(reducer(undefined, {})).toEqual('')
+    expect(reducer(undefined, { type: '' })).toEqual('')
   })
 
   it('should handle SET_REDIRECT', () => {
