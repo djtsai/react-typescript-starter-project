@@ -23,6 +23,7 @@
     "BUILD_TIME": false
   },
   "rules": {
+    "@typescript-eslint/member-delimiter-style": "off",
     "array-bracket-newline": ["error", "consistent"],
     "array-bracket-spacing": "error",
     "array-callback-return": "error",
