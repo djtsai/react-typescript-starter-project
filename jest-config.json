@@ -12,7 +12,7 @@
   "globals": {
     "API_BASE": "http://localhost:8080"
   },
-  "setupFiles": ["<rootDir>/test/jestSetup.js"],
+  "setupFiles": ["<rootDir>/test/jestSetup.ts"],
   "collectCoverage": true,
   "coverageThreshold": {
     "global": {

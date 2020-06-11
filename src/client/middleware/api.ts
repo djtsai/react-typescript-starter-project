@@ -1,5 +1,7 @@
 import axios from 'axios'
+import { Dispatch, Middleware, MiddlewareAPI } from 'redux'
 
+import { APIAction } from 'actions/types'
 import * as ActionTypes from 'constants/ActionTypes'
 
 /**
@@ -22,7 +24,7 @@ import * as ActionTypes from 'constants/ActionTypes'
  * @param store
  * @returns {function(*): Function}
  */
-const apiMiddleware = (store) => (next) => (action) => {
+const apiMiddleware: Middleware = (store: MiddlewareAPI) => (next: Dispatch) => (action: APIAction<string>) => {
   if (!action.meta || action.meta.type !== 'api') {
     return next(action)
   }

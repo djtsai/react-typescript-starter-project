@@ -1,4 +1,5 @@
 /* istanbul ignore file */
+import { AxiosPromise } from 'axios'
 import { AnyAction, Dispatch, Middleware, MiddlewareAPI } from 'redux'
 
 export interface MockMiddlewareType {
@@ -7,7 +8,11 @@ export interface MockMiddlewareType {
   store: MiddlewareAPI
 }
 
-export type CreateMockMiddlewareType = (middleware: Middleware) => MockMiddlewareType
+export interface APIMockMiddlewareType extends MockMiddlewareType {
+  invoke: (action: AnyAction) => AxiosPromise
+}
+
+export type CreateMockMiddlewareType = (middleware: Middleware) => MockMiddlewareType | APIMockMiddlewareType
 
 const createMockMiddleware: CreateMockMiddlewareType = (middleware: Middleware) => {
   const store: MiddlewareAPI = {

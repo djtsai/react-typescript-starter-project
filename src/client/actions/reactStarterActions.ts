@@ -1,6 +1,6 @@
-import { toast } from 'react-toastify'
+import { toast, TypeOptions } from 'react-toastify'
 
-import { DisplayToastAction, GetExampleAction } from 'actions/types/reactStarterActions'
+import { DisplayToastAction, GetExampleAction } from 'actions/types'
 import * as ActionTypes from 'constants/ActionTypes'
 
 export function getExample(): GetExampleAction {
@@ -15,7 +15,7 @@ export function getExample(): GetExampleAction {
   }
 }
 
-export function displayToast(message: string, type = toast.TYPE.DEFAULT): DisplayToastAction {
+export function displayToast(message: string, type = toast.TYPE.DEFAULT as TypeOptions): DisplayToastAction {
   return {
     type: ActionTypes.DISPLAY_TOAST,
     toast: { message, type }

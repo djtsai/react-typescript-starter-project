@@ -1,20 +1,30 @@
-import mockAxios from 'axios'
+import axios, { AxiosStatic } from 'axios'
+import { AnyAction } from 'redux'
 
+import { APIAction } from 'actions/types'
 import * as ActionTypes from 'constants/ActionTypes'
 import apiMiddleware from 'middleware/api'
 
-import createMockMiddleware from './createMockMiddleware'
+import createMockMiddleware, { APIMockMiddlewareType } from './createMockMiddleware'
+
+interface AxiosMock extends AxiosStatic {
+  mockResolvedValueOnce: (value: jest.ResolvedValue<PromiseLike<Record<string, unknown>>>) => this
+  mockRejectedValueOnce: (value?: jest.ResolvedValue<PromiseLike<Record<string, unknown>>>) => this
+}
+
+jest.mock('axios')
+const mockAxios = axios as jest.Mocked<AxiosMock>
 
 describe('api middleware', () => {
-  let mockMiddleware
+  let mockMiddleware: APIMockMiddlewareType
 
   beforeEach(() => {
-    mockMiddleware = createMockMiddleware(apiMiddleware)
+    mockMiddleware = createMockMiddleware(apiMiddleware) as APIMockMiddlewareType
   })
 
   it('should pass through when no meta object present in action', () => {
     const { next, invoke } = mockMiddleware
-    const action = { type: 'TEST' }
+    const action: AnyAction = { type: 'TEST' }
     invoke(action)
 
     expect(next).toHaveBeenCalledWith(action)
@@ -24,8 +34,8 @@ describe('api middleware', () => {
     const { store, next, invoke } = mockMiddleware
 
     const data = { data: [{ name: 'def' }, { name: 'abc' }] }
-    mockAxios.mockImplementationOnce(() => Promise.resolve({ data }))
-    const action = {
+    mockAxios.mockResolvedValueOnce({ data })
+    const action: APIAction<string> = {
       type: 'TEST',
       meta: {
         type: 'api',
@@ -48,8 +58,8 @@ describe('api middleware', () => {
   it('should dispatch SET_REQUEST_FAILURE when API call fails', (done) => {
     const { store, next, invoke } = mockMiddleware
 
-    mockAxios.mockImplementationOnce(() => Promise.reject())
-    const action = {
+    mockAxios.mockRejectedValueOnce()
+    const action: APIAction<string> = {
       type: 'TEST',
       meta: {
         type: 'api',

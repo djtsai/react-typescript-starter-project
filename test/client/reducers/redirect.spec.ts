@@ -1,6 +1,6 @@
 import { AnyAction } from 'redux'
 
-import { RedirectActionType } from 'actions/types/redirectActions'
+import { RedirectActionType } from 'actions/types'
 import * as ActionTypes from 'constants/ActionTypes'
 import reducer from 'reducers/redirect'
 

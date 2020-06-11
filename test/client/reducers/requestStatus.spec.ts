@@ -1,6 +1,6 @@
 import { AnyAction } from 'redux'
 
-import { RequestStatusAction } from 'actions/types/requestStatusActions'
+import { RequestStatusAction } from 'actions/types'
 import * as ActionTypes from 'constants/ActionTypes'
 import * as RequestStatus from 'constants/RequestStatus'
 import reducer from 'reducers/requestStatus'

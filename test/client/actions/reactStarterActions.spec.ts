@@ -1,7 +1,7 @@
 import { toast as mockToast } from 'react-toastify'
 
 import * as Actions from 'actions/reactStarterActions'
-import { DisplayToastAction, GetExampleAction } from 'actions/types/reactStarterActions'
+import { DisplayToastAction, GetExampleAction } from 'actions/types'
 import * as ActionTypes from 'constants/ActionTypes'
 
 describe('react starter actions', () => {

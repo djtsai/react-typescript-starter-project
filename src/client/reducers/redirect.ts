@@ -1,4 +1,4 @@
-import { RedirectActionType } from 'actions/types/redirectActions'
+import { RedirectActionType } from 'actions/types'
 import * as ActionTypes from 'constants/ActionTypes'
 
 export default function redirect(state = '', action: RedirectActionType): string {
