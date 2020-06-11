@@ -3,7 +3,7 @@ import mockAxios from 'axios'
 import * as ActionTypes from 'constants/ActionTypes'
 import apiMiddleware from 'middleware/api'
 
-import createMockMiddleware from './mockMiddleware'
+import createMockMiddleware from './createMockMiddleware'
 
 describe('api middleware', () => {
   let mockMiddleware
