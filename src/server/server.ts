@@ -6,7 +6,7 @@ import isPortReachable from 'is-port-reachable'
 import morgan from 'morgan'
 
 const port = process.env.PORT_PUBLIC || 3000
-const staticFileMiddleware = expressStaticGzip('build/dist')
+const staticFileMiddleware = expressStaticGzip('build/dist', {})
 
 const app = express()
 
@@ -44,7 +44,7 @@ app.get('/healthcheck', (req, res) => res.send('HAPPY'))
 
 // to test ports
 app.get('/port/:host/:port', (req, res) => {
-  isPortReachable(req.params.port, { host: req.params.host }).then((reachable) => {
+  isPortReachable(req.params.port, { host: req.params.host }).then((reachable: boolean) => {
     res.send(reachable)
   })
 })
