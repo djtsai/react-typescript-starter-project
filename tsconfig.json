@@ -28,6 +28,7 @@
       "constants/*": ["client/constants/*"],
       "containers/*": ["client/containers/*"],
       "middleware/*": ["client/middleware/*"],
+      "reducers": ["client/reducers"],
       "reducers/*": ["client/reducers/*"],
       "store/*": ["client/store/*"]
     },
