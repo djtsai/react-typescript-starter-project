@@ -1,9 +1,8 @@
-import { AnyAction } from 'redux'
-
+import { RequestStatusAction } from 'actions/types/requestStatusActions'
 import * as ActionTypes from 'constants/ActionTypes'
 import * as RequestStatus from 'constants/RequestStatus'
 
-export default function requestStatus(state = RequestStatus.REQUEST_NOT_STARTED, action: AnyAction): string {
+export default function requestStatus(state = RequestStatus.REQUEST_NOT_STARTED, action: RequestStatusAction): string {
   switch (action.type) {
     case ActionTypes.SET_REQUEST_NOT_STARTED:
       return RequestStatus.REQUEST_NOT_STARTED

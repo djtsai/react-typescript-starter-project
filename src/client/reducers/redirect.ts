@@ -1,8 +1,7 @@
-import { AnyAction } from 'redux'
-
+import { RedirectActionType } from 'actions/types/redirectActions'
 import * as ActionTypes from 'constants/ActionTypes'
 
-export default function redirect(state = '', action: AnyAction): string {
+export default function redirect(state = '', action: RedirectActionType): string {
   switch (action.type) {
     case ActionTypes.SET_REDIRECT:
       return action.url
