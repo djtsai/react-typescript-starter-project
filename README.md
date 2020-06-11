@@ -1,5 +1,5 @@
-# react-starter-project
-Starter React project that uses webpack, react-router, redux, and express server.
+# react-typescript-starter-project
+Starter React project that uses webpack, react-router, redux, TypeScript, and express server.
 
 ## Installation
 Run ```npm install```
@@ -9,6 +9,9 @@ Run ```npm run dev```
 
 ## Building production files
 Run ```npm run build:prod```
+
+## Running node server (after building production files)
+Run ```npm start```
 
 ## Tests
 Run ```npm test```
