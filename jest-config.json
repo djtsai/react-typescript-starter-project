@@ -1,13 +1,13 @@
 {
   "verbose": true,
   "moduleNameMapper": {
-    "^actions(.*)$": "<rootDir>/src/client/actions$1",
-    "^components(.*)$": "<rootDir>/src/client/components$1",
-    "^constants(.*)$": "<rootDir>/src/client/constants$1",
-    "^containers(.*)$": "<rootDir>/src/client/containers$1",
-    "^middleware(.*)$": "<rootDir>/src/client/middleware$1",
-    "^reducers(.*)$": "<rootDir>/src/client/reducers$1",
-    "^store(.*)$": "<rootDir>/src/client/store$1"
+    "^actions/(.*)$": "<rootDir>/src/client/actions/$1",
+    "^components/(.*)$": "<rootDir>/src/client/components/$1",
+    "^constants/(.*)$": "<rootDir>/src/client/constants/$1",
+    "^containers/(.*)$": "<rootDir>/src/client/containers/$1",
+    "^middleware/(.*)$": "<rootDir>/src/client/middleware/$1",
+    "^reducers/(.*)$": "<rootDir>/src/client/reducers/$1",
+    "^store/(.*)$": "<rootDir>/src/client/store/$1"
   },
   "globals": {
     "API_BASE": "http://localhost:8080"

@@ -7,7 +7,7 @@ interface APIActionMeta {
   options: {
     url: string
     method?: 'GET' | 'POST' | 'PUT' | 'DELETE'
-    data?: object
+    data?: Record<string, unknown>
   }
 }
 
@@ -16,9 +16,11 @@ interface ToastMessage {
   type: string
 }
 
-export interface GetExampleAction extends Action<typeof ActionTypes.GET_EXAMPLE> {
+export interface APIAction<T> extends Action<T> {
   meta: APIActionMeta
 }
+
+export type GetExampleAction = APIAction<typeof ActionTypes.GET_EXAMPLE>
 
 export interface DisplayToastAction extends Action<typeof ActionTypes.DISPLAY_TOAST> {
   toast: ToastMessage
