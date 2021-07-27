@@ -1,5 +1,6 @@
 {
   "verbose": true,
+  "testEnvironment": "jsdom",
   "moduleNameMapper": {
     "^actions/(.*)$": "<rootDir>/src/client/actions/$1",
     "^components/(.*)$": "<rootDir>/src/client/components/$1",

@@ -17,8 +17,8 @@ module.exports = (env) => {
         allowedHosts: [],
         historyApiFallback: {
           rewrites: [
-            { from: /.*/, to: '/index.html' },
-          ],
+            { from: /.*/, to: '/index.html' }
+          ]
         },
         proxy: {
           '/api': {

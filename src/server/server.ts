@@ -35,7 +35,7 @@ app.use(csp({
     imgSrc: ["'self'", 'data:', 'blob:'],
     connectSrc: ["'self'", 'blob:', 'http://localhost:8080'],
     reportUri: '/api/v1/splunk',
-    upgradeInsecureRequests: false
+    upgradeInsecureRequests: []
   }
 }))
 

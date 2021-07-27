@@ -1,7 +1,9 @@
 import path from 'path'
+
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin' // Generates index.html with imported js and css
 import MiniCssExtractPlugin from 'mini-css-extract-plugin' // Used to extract css into different files
+import ESLintPlugin from 'eslint-webpack-plugin'
 import StyleLintPlugin from 'stylelint-webpack-plugin' // Linter for scss files
 
 const buildTime = new Date().getTime()
@@ -27,19 +29,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build/dist'),
     publicPath: '/',
-    filename: devMode ? 'assets/js/[name].[hash:7].js' : 'assets/js/[name].[contenthash].js'
+    filename: 'assets/js/[name].[contenthash].js'
   },
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.[jt]sx?$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader', // Runs eslint before trying to compile js
-        options: {
-          globals: ['API_BASE', 'BUILD_TIME']
-        }
-      },
       {
         test: /\.[jt]sx?$/,
         exclude: /node_modules/,
@@ -60,7 +53,7 @@ module.exports = {
         options: {
           context: resolveSrcPath('client'),
           limit: 10000,
-          name: devMode ? 'assets/img/[name].[hash:7].[ext]' : 'assets/img/[name].[contenthash].[ext]'
+          name: 'assets/img/[name].[contenthash].[ext]'
         }
       }
     ]
@@ -95,9 +88,12 @@ module.exports = {
       title: '',
       template: resolveSrcPath('client/index.ejs')
     }),
+    new ESLintPlugin({
+      extensions: ['js', 'jsx', 'ts', 'tsx']
+    }),
     new StyleLintPlugin({
       configFile: '.stylelintrc',
-      syntax: 'scss'
+      files: ['src/**/*.scss']
     }),
     new MiniCssExtractPlugin({ filename: 'assets/css/[name].[contenthash].css' })
   ],
