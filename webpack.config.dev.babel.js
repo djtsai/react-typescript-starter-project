@@ -13,8 +13,10 @@ module.exports = (env) => {
       devtool: 'eval-source-map',
       devServer: {
         port: PORT,
-        stats: 'minimal',
-        allowedHosts: [],
+        allowedHosts: 'auto',
+        devMiddleware: {
+          stats: 'minimal'
+        },
         historyApiFallback: {
           rewrites: [
             { from: /.*/, to: '/index.html' }
