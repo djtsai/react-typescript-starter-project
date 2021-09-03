@@ -49,11 +49,9 @@ module.exports = {
       },
       {
         test: /(png|svg|jpg|ico|woff|woff2|ttf|eot|otf)$/,
-        loader: 'file-loader',
-        options: {
-          context: resolveSrcPath('client'),
-          limit: 10000,
-          name: 'assets/img/[name].[contenthash].[ext]'
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/img/[name].[contenthash].[ext]'
         }
       }
     ]
