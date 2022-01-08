@@ -20,7 +20,7 @@ const RootContainer: FunctionComponent = () => {
 
   return (
     <div className="react-starter-app-container">
-      <ToastContainer/>
+      <ToastContainer />
       <h1>React Starter App</h1>
       <div>
         <button onClick={getExample}>Click to make sample API call!</button>

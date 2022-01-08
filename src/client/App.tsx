@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import RootContainer from 'containers/root'
 import configureStore from 'store/configureStore'
@@ -12,10 +12,12 @@ const App: FunctionComponent = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <Route path="/" component={RootContainer}/>
+        <Routes>
+          <Route path="/" element={<RootContainer />} />
+        </Routes>
       </BrowserRouter>
     </Provider>
   )
 }
 
-render(<App/>, document.getElementById('app-root'))
+render(<App />, document.getElementById('app-root'))
